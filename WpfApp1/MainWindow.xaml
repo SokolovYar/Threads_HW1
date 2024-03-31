@@ -1,0 +1,76 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="150" Width="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+       
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="1" Content="Generated numbers" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="2" Content="Start" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="3" Content="End" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="4" Content="Pause/Resume" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <Label Grid.Column="5" Content="Stop" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+
+        </Grid>
+
+        <Border Grid.Row="1" Padding="3" BorderThickness="1" BorderBrush="DimGray">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="SimleButton" Content="Generate simple" Grid.Row="1" Click="SimleButton_Click" PreviewTextInput="textBox_PreviewTextInput" />
+                <TextBox x:Name="s_tBox" Grid.Column="1" MaxLines="1" TextAlignment="Center" IsEnabled="False" />
+                <TextBox x:Name="s_rangeD" Grid.Column="2" MaxLines="1" Text="2" TextAlignment="Center"/>
+                <TextBox x:Name="s_rangeU" Grid.Column="3" MaxLines="1" Text="1000" TextAlignment="Center"/>
+                <Button x:Name="SimleButton_Pause" Grid.Column="4" Content="Pause" Click="SimpleButton_Pause"/>
+                <Button x:Name="SimleButton_Abort" Grid.Column="5" Content="Abort" Click="Simple_Abort"/>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="2" Padding="3" BorderThickness="1" BorderBrush="DimGray">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button x:Name="FibButton" Content="Generate Fibo" Grid.Row="1" Click="FiboButton_Click" PreviewTextInput="textBox_PreviewTextInput" />
+                <TextBox x:Name="f_tBox" Grid.Column="1" MaxLines="1" TextAlignment="Center" IsEnabled="False" />
+                <TextBox x:Name="f_rangeD" Grid.Column="2" MaxLines="1" Text="2" TextAlignment="Center"/>
+                <TextBox x:Name="f_rangeU" Grid.Column="3" MaxLines="1" Text="1000" TextAlignment="Center"/>
+                <Button x:Name="FibButton_Pause" Grid.Column="4" Content="Pause"  Click="FiboButton_Pause"/>
+                <Button x:Name="FibButton_Abort" Grid.Column="5" Content="Abort" Click="Fib_Abort"/>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
